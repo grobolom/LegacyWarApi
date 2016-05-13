@@ -11,3 +11,5 @@ api:
 
 database:
     image: mongo:3.0
+    ports:
+        - "27017:27017"
