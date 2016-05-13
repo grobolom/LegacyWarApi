@@ -1,6 +1,9 @@
 FROM golang:latest
 
-WORKDIR /app
-COPY app /app
+ADD ./app /go/src/app/
+
+RUN go install app/
+
+ENTRYPOINT /go/bin/app
 
 EXPOSE 3000
