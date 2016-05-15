@@ -24,7 +24,7 @@ func defaultHandler(w http.ResponseWriter, r *http.Request) {
     s, e := json.Marshal(result)
 
     fmt.Fprintf(w, "Go web app + Mongo + Docker!")
-    fmt.Println(w, string(s))
+    fmt.Fprintf(w, string(s))
 }
 
 func main() {
