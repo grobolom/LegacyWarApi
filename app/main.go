@@ -13,6 +13,7 @@ func defaultHandler(w http.ResponseWriter, r *http.Request) {
     if err != nil {
         panic(err)
     }
+    defer session.Close()
     session.SetMode(mgo.Monotonic, true)
 
     var result [] struct { name string }
