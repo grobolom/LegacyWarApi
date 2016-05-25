@@ -4,6 +4,7 @@ ADD ./app /go/src/app/
 
 # dependencies
 RUN go get labix.org/v2/mgo
+RUN go get github.com/julienschmidt/httprouter
 
 RUN go install app/
 
