@@ -1,13 +1,18 @@
+# dependencies
+# RUN go get labix.org/v2/mgo
+# RUN go get github.com/julienschmidt/httprouter
+
 FROM golang:latest
 
-ADD ./app /go/src/app/
+RUN mkdir -p /go/src/app
+WORKDIR /go/src/app
 
-# dependencies
-RUN go get labix.org/v2/mgo
-RUN go get github.com/julienschmidt/httprouter
+COPY . /go/src/app
 
-RUN go install app/
+RUN go-wrapper download
+RUN go-wrapper install
 
-ENTRYPOINT /go/bin/app
-
+ENV PORT 3000
 EXPOSE 3000
+
+CMD ["go-wrapper", "run"]
