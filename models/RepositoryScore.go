@@ -2,7 +2,7 @@ package models
 
 type (
     RepositoryScore struct {
-        repository_id struct
+        repository_id int64
         name string
         owner string
         full_name string

@@ -1,12 +1,18 @@
 package models
 
+import "time"
+
 type (
     Leaderboard struct {
-        id int64
-        start time // the start date of the leaderboard
-        length int // some leaderboards can be month-long?
-        score int64 // maybe float? we can probably round it in our calculations
-        scoring_method string // we can have different ways of scoring these
-        board []RepositoryScore
+        Id              int64               `json:"id"`
+        // the start date of the leaderboard
+        Start           time.Time           `json:"start"`
+        // some leaderboards can be month-long?
+        Length          int                 `json:"length"`
+        // we can have different ways of scoring these
+        ScoringMethod   string              `json:"scoring_method"`
+        Board           []RepositoryScore   `json:"board"`
     }
+
+    Leaderboards []Leaderboard
 )
