@@ -20,5 +20,6 @@ func main() {
 
     r := httprouter.New()
     r.GET("/leaderboards", ReadLeaderboards(db))
+    r.POST("/leaderboards", CreateLeaderboards(db))
     http.ListenAndServe(":3000", r)
 }
