@@ -14,9 +14,9 @@ func main() {
 
     // set up a GET handler
     r.GET("/", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-        fmt.Fprint(w, "Welcome!\n")
+        fmt.Fprint(w, "Welcome Home!\n")
     })
 
     // httprouter does cool stuff I think
-    http.ListenAndServe("localhost:3000", r)
+    http.ListenAndServe(":3000", r)
 }
