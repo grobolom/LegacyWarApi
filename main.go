@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-    // set up mgo here and pass it in to handler functions
+    // MGO SETUP
     mgo_url := ":27017"
     session, err := mgo.Dial(mgo_url)
     if err != nil {
@@ -19,7 +19,17 @@ func main() {
     db := session.DB("legacywar-api")
 
     r := httprouter.New()
+
+    //
+    // ENDPOINTS
+    //
+
     r.GET("/leaderboards", ReadLeaderboards(db))
     r.POST("/leaderboards", CreateLeaderboards(db))
     http.ListenAndServe(":3000", r)
+
+    //
+    // END OF ENDPOINTS
+    //
+
 }
