@@ -7,6 +7,7 @@ import (
     "gopkg.in/mgo.v2"
     "github.com/julienschmidt/httprouter"
 
+    "./handlers"
 )
 
 func main() {
@@ -24,8 +25,8 @@ func main() {
     // ENDPOINTS
     //
 
-    r.GET("/leaderboards", ReadLeaderboards(db))
-    r.POST("/leaderboards", CreateLeaderboards(db))
+    r.GET("/leaderboards", handlers.ReadLeaderboards(db))
+    r.POST("/leaderboards", handlers.CreateLeaderboards(db))
 
     //
     // END OF ENDPOINTS

@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
     "time"
@@ -6,7 +6,7 @@ import (
     "gopkg.in/mgo.v2"
     "github.com/julienschmidt/httprouter"
     "encoding/json"
-    "./models"
+    "../models"
 )
 
 
