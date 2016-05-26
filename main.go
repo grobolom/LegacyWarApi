@@ -26,10 +26,10 @@ func main() {
 
     r.GET("/leaderboards", ReadLeaderboards(db))
     r.POST("/leaderboards", CreateLeaderboards(db))
-    http.ListenAndServe(":3000", r)
 
     //
     // END OF ENDPOINTS
     //
 
+    http.ListenAndServe(":3001", r)
 }
