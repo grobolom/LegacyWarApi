@@ -1,9 +1,9 @@
 package handlers
 
 import (
-    "time"
     "net/http"
     "gopkg.in/mgo.v2"
+    "gopkg.in/mgo.v2/bson"
     "github.com/julienschmidt/httprouter"
     "encoding/json"
     "../models"
@@ -31,11 +31,16 @@ func CreateLeaderboards(db *mgo.Database) httprouter.Handle {
         r *http.Request,
         ps httprouter.Params,
     ) {
-        db.C("leaderboards").Insert(&models.Leaderboard{
-            Id: "",
-            Start: time.Now(),
-            Length: 7,
-            ScoringMethod: "default",
-        })
+        n := models.Leaderboard{}
+        err := json.NewDecoder(r.Body).Decode(&n)
+
+        if err != nil {
+            panic(err)
+        }
+
+        n.Id = bson.NewObjectId()
+
+        db.C("leaderboards").Insert(&n)
+        json.NewEncoder(w).Encode(n)
     }
 }
