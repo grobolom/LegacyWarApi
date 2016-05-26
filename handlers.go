@@ -32,7 +32,7 @@ func CreateLeaderboards(db *mgo.Database) httprouter.Handle {
         ps httprouter.Params,
     ) {
         db.C("leaderboards").Insert(&models.Leaderboard{
-            Id: 3,
+            Id: "",
             Start: time.Now(),
             Length: 7,
             ScoringMethod: "default",

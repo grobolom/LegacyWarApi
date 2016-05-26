@@ -1,10 +1,11 @@
 package models
 
 import "time"
+import "gopkg.in/mgo.v2/bson"
 
 type (
     Leaderboard struct {
-        Id int64 `json:"id" bson:"id"`
+        Id bson.ObjectId `json:"_id" bson:"_id"`
         // the start date of the leaderboard
         Start time.Time `json:"start" bson:"start"`
         // some leaderboards can be month-long?
