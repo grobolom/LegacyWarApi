@@ -1,2 +1,4 @@
 pkg/
 src/
+gin-bin
+bin/
