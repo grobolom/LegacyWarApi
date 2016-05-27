@@ -26,7 +26,7 @@ func main() {
     //
 
     r.GET("/leaderboards", handlers.ReadLeaderboards(db))
-    r.POST("/leaderboards", handlers.CreateLeaderboards(db))
+    r.POST("/leaderboards", handlers.CreateLeaderboard(db))
 
     //
     // END OF ENDPOINTS

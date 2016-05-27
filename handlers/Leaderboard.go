@@ -25,7 +25,7 @@ func ReadLeaderboards(db *mgo.Database) httprouter.Handle {
     }
 }
 
-func CreateLeaderboards(db *mgo.Database) httprouter.Handle {
+func CreateLeaderboard(db *mgo.Database) httprouter.Handle {
     return func(
         w http.ResponseWriter,
         r *http.Request,
