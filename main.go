@@ -31,8 +31,8 @@ func main() {
     r.GET("/tracked_repositories", handlers.ReadTrackedRepositories(db))
     r.POST("/tracked_repositories", handlers.CreateTrackedRepository(db))
 
-    r.GET("/repository_score", handlers.ReadRepositoryScores(db))
-    r.POST("/repository_score", handlers.CreateRepositoryScore(db))
+    r.GET("/repository_scores", handlers.ReadRepositoryScores(db))
+    r.POST("/repository_scores", handlers.CreateRepositoryScore(db))
 
     //
     // END OF ENDPOINTS
