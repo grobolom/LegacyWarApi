@@ -28,6 +28,12 @@ func main() {
     r.GET("/leaderboards", handlers.ReadLeaderboards(db))
     r.POST("/leaderboards", handlers.CreateLeaderboard(db))
 
+    r.GET("/tracked_repositories", handlers.ReadTrackedRepositories(db))
+    r.POST("/tracked_repositories", handlers.CreateTrackedRepository(db))
+
+    r.GET("/repository_score", handlers.ReadRepositoryScores(db))
+    r.POST("/repository_score", handlers.CreateRepositoryScore(db))
+
     //
     // END OF ENDPOINTS
     //
