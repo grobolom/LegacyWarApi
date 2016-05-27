@@ -34,6 +34,8 @@ func main() {
     r.GET("/repository_scores", handlers.ReadRepositoryScores(db))
     r.POST("/repository_scores", handlers.CreateRepositoryScore(db))
 
+    r.GET("/commits", handlers.ReadCommits(db))
+    r.POST("/commits", handlers.CreateCommit(db))
     //
     // END OF ENDPOINTS
     //
