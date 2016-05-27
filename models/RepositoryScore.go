@@ -10,4 +10,6 @@ type (
         Score int `json:"score" bson:"score"`
         Position int `json:"position" bson:"position"`
     }
+
+    RepositoryScores []RepositoryScore
 )
