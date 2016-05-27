@@ -13,4 +13,6 @@ type (
         Active bool `json:"active" bson:"active"`
         ActiveSince time.Time `json:"active_since" bson:"active_since"`
     }
+
+    TrackedRepositories []TrackedRepository
 )
