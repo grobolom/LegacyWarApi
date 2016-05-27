@@ -1,10 +1,11 @@
 package models
 
 import "time"
+import "gopkg.in/mgo.v2/bson"
 
 type (
     TrackedRepository struct {
-        Id int64 `json:"_id" bson:"_id"`
+        Id bson.ObjectId `json:"_id" bson:"_id"`
         Name string `json:"name" bson:"name"`
         Owner string `json:"owner" bson:"owner"`
         FullName string `json:"fullname" bson:"fullname"`
