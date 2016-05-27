@@ -4,13 +4,13 @@ import "time"
 
 type (
     TrackedRepository struct {
-        id int64
-        name string
-        owner string
-        full_name string
-        url string
-        included_since time.Time
-        active bool
-        active_since time.Time
+        Id int64 `json:"_id" bson:"_id"`
+        Name string `json:"name" bson:"name"`
+        Owner string `json:"owner" bson:"owner"`
+        FullName string `json:"fullname" bson:"fullname"`
+        Url string `json:"url" bson:"url"`
+        IncludedSince time.Time `json:"included_since" bson:"included_since"`
+        Active bool `json:"active" bson:"active"`
+        ActiveSince time.Time `json:"active_since" bson:"active_since"`
     }
 )
